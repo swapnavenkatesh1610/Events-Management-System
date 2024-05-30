@@ -1,0 +1,171 @@
+/* styles.css */
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.event-list-container {
+  animation: fadeIn 1s ease-in-out;
+  margin-top: 30px;
+}
+
+h2 {
+  color: #007bff;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+.table {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.event-title,
+.event-description,
+.event-date,
+.event-location {
+  font-family: 'Verdana', sans-serif;
+  font-size: 14px;
+  color: #333333;
+}
+
+.btn-custom {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.btn-info:hover {
+  background-color: #117a8b;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.action-button {
+  width: 100px; /* Ensures the buttons have the same width */
+  height: 40px; /* Ensures the buttons have the same height */
+  display: inline-block;
+  text-align: center;
+  line-height: 40px; /* Centers the text vertically */
+  padding: 0; /* Removes extra padding */
+  margin-right: 10px; /* Adds space between the buttons */
+}
+
+/* Gradient button for "Add Event" */
+.btn-gradient {
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #845ec2, #2c73d2);
+  background-size: 300% 300%;
+  color: white;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  transition: background-position 0.5s, transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background-position: right center; /* Change the position of the gradient on hover */
+  transform: scale(1.05);
+}
+
+.mixed-color-button {
+  background: linear-gradient(45deg, #FF6B6B, #FFD93D, #6BCB77);
+  background-size: 200% 200%;
+  color: white;
+  padding: 15px 30px; /* Increased padding for larger button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-position 0.5s, box-shadow 0.5s;
+  text-decoration: none; /* Ensures the text inside the Link is not underlined */
+  display: inline-block; /* Ensures the button has block properties */
+  font-size: 1.25rem; /* Increased font size for larger button */
+}
+
+.mixed-color-button:hover {
+  background-position: right center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Ensures the text inside the Link is not underlined on hover */
+}
+
+.mixed-color-button + .mixed-color-button {
+  margin-left: 10px;
+}
+
+/* Define a mixed color for navbar links */
+.nav-link-mixed {
+  background: linear-gradient(45deg, #ff6b6b, #f06595, #845ec2, #2c73d2);
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 10px;
+  transition: background-position 0.3s, transform 0.3s ease;
+}
+
+.nav-link-mixed:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+.auth-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+}
+
+.auth-container .form-group {
+  margin-bottom: 20px;
+}
+
+.auth-container .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+}
