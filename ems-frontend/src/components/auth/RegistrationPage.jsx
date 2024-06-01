@@ -42,6 +42,10 @@ function RegistrationPage() {
     };
 
     return (
+        <div>
+        {/* Add Bootstrap CSS link */}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        {/* End of Bootstrap CSS link */}
         <div style={{ backgroundImage: `url(${registerImage})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div className="auth-container" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', borderRadius: '5px' }}>
                 <h2>Registration</h2>
@@ -65,6 +69,7 @@ function RegistrationPage() {
                     <button type="submit" className="btn btn-primary">Register</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 }
