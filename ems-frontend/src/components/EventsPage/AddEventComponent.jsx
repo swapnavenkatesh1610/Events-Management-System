@@ -66,10 +66,6 @@ const AddEventComponent = () => {
     };
 
     return (
-        <div>
-            {/* Add Bootstrap CSS link */}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-            {/* End of Bootstrap CSS link */}
         <div className="container">
             <h2 className="text-center my-4">{id ? 'Update Event' : 'Add Event'}</h2>
             {error && <div className="alert alert-danger">{error}</div>}
@@ -78,12 +74,16 @@ const AddEventComponent = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label>Title</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
-                            />
+                            {id ? (
+                                <p className="form-control-static">{title}</p>
+                            ) : (
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                />
+                            )}
                         </div>
                         <div className="form-group">
                             <label>Description</label>
@@ -111,12 +111,13 @@ const AddEventComponent = () => {
                                 onChange={(e) => setLocation(e.target.value)}
                             />
                         </div>
-                        <button type="submit" className="btn btn-success">Submit</button>
-                        <button type="button" className="btn btn-danger ml-2" onClick={handleCancel}>Cancel</button>
+                        <div> {/* Render buttons in both Add and Update modes */}
+                            <button type="submit" className="btn btn-success">Submit</button>
+                            <button type="button" className="btn btn-danger ml-2" onClick={handleCancel}>Cancel</button>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
         </div>
     );
 };

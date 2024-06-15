@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 @Entity
-@Table(name = "ourusers")
+@Table(name = "ourusers",uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
 @Data
 public class OurUsers implements UserDetails {
     @Id

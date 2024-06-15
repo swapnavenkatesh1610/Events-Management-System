@@ -20,11 +20,11 @@ function LoginPage() {
                 localStorage.setItem('role', userData.role);
                 navigate('/profile');
             } else {
-                setError(userData.message);
+                setError(userData.message); // Set error message from backend response
             }
         } catch (error) {
             console.log(error);
-            setError(error.message);
+            setError("Failed to login. Please try again."); // Generic error message for unexpected errors
             setTimeout(() => {
                 setError('');
             }, 5000);
@@ -32,10 +32,6 @@ function LoginPage() {
     };
 
     return (
-        <div>
-            {/* Add Bootstrap CSS link */}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-            {/* End of Bootstrap CSS link */}
         <div style={{ backgroundImage: `url(${loginImage})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div className="auth-container" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', borderRadius: '5px' }}>
                 <h2>Login</h2>
@@ -43,16 +39,15 @@ function LoginPage() {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Email: </label>
-                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
                     <div className="form-group">
                         <label>Password: </label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" className="btn btn-primary">Login</button>
                 </form>
             </div>
-        </div>
         </div>
     );
 }
